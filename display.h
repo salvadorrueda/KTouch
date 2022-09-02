@@ -166,7 +166,7 @@ char getCode(){
 // Return char of the number or letter touched on cKeypad
   
     char n;      // number touched on cKeypad.
-    char code;   // previous number touched on cKeypad.
+    char code='#';   // previous number touched on cKeypad.
     
     blocked=true;
     n = ckeypad(60,100,30,WHITE,l,blocked);

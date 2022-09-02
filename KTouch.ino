@@ -89,7 +89,8 @@ void loop(){
 
  code = getCode();
 
- // Print the key touched
- Keyboard.print(code);
+ // Print the key touched 
+ //   if none is selected the returned code is '#'.
+ if(code != '#') Keyboard.print(code);
      
 }
