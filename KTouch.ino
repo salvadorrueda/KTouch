@@ -85,10 +85,6 @@ void loop(){
  char code;
   
  tft.fillScreen(BLACK);
- // wait for a code then show the corresponding screen  
-
-// feedback();   // Write some text at top of the screen.
-
 
  code = getCode();
 
@@ -98,6 +94,7 @@ void loop(){
   case '#':  // if none is selected the returned code is '#'.
       break;
   case '!':  // "execution mode". Write words and sentences.
+      feedback();
       code = getCode();
       switch(code){
         case 'a': 
