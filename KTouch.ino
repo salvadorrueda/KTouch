@@ -87,6 +87,9 @@ void loop(){
  tft.fillScreen(BLACK);
  // wait for a code then show the corresponding screen  
 
+// feedback();   // Write some text at top of the screen.
+
+
  code = getCode();
 
  // Print the key touched 
@@ -111,4 +114,5 @@ void loop(){
       Keyboard.print(code);
       break;
   }     
+  
 }

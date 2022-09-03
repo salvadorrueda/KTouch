@@ -21,6 +21,17 @@ const uint16_t YELLOW   = 0xFFE0;
 const uint16_t CYAN   = 0x07FF;
 const uint16_t WHITE  = 0xFFFF;
 
+char mfeedback[11]=""; // 10 chars and \n.
+int ifeedback = 0;
+
+void feedback(){
+  // Write some text at top of the screen.
+      tft.setCursor(10,10);
+      tft.setTextSize(2);
+      tft.setTextColor(WHITE);
+      tft.println(mfeedback);
+  
+}
 
 
 void textckeypad(uint16_t x0, uint16_t y0, uint16_t c, char t){
@@ -169,6 +180,8 @@ char getCode(){
     char code='#';   // previous number touched on cKeypad.
     
     blocked=true;
+
+    feedback();
     n = ckeypad(60,100,30,WHITE,l,blocked);
 
     
@@ -185,6 +198,16 @@ char getCode(){
       code = n; // saving touched key on code
       n = ckeypad(60,100,30,WHITE,l,blocked);
     }
-        
+    
+    // updating feedbach message at the top of screen.
+    mfeedback[ifeedback]=code;
+    if(ifeedback<10) ifeedback++;    
+    else {
+      ifeedback = 10; // move the index to the last.
+      for(int i=0; i<10; i++) mfeedback[i]=mfeedback[i+1];
+      mfeedback[10]=' ';
+    }
+    
+    
     return code;
 }
