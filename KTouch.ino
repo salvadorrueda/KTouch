@@ -90,7 +90,25 @@ void loop(){
  code = getCode();
 
  // Print the key touched 
- //   if none is selected the returned code is '#'.
- if(code != '#') Keyboard.print(code);
-     
+ 
+ switch(code){
+  case '#':  // if none is selected the returned code is '#'.
+      break;
+  case '!':  // "execution mode". Write words and sentences.
+      code = getCode();
+      switch(code){
+        case 'a': 
+          Keyboard.println("Abra cadabra");         
+        break;        
+        
+        case 's': 
+          Keyboard.println("Salvador");         
+        break;                
+      }
+      break;
+  
+  default:
+      Keyboard.print(code);
+      break;
+  }     
 }

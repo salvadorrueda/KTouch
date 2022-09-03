@@ -49,7 +49,7 @@ char ckeypad(uint16_t x0, uint16_t y0, uint16_t r, uint16_t c, int l, boolean bl
   //   0 [] // 
 
 
- char cs[]= "0123456789 abcdefghi jklmnopqr stuvwxyz.0123456789 ABCDEFGHI JKLMNOPQR STUVWXYZ.";     
+ char cs[]= "0123456789!abcdefghi jklmnopqr stuvwxyz.0123456789 ABCDEFGHI JKLMNOPQR STUVWXYZ.";     
   
   char n; // number touched on cKeypad.
   
